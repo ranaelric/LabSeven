@@ -151,10 +151,11 @@ DOMDisplay.prototype.scrollPlayerIntoView = function() {
 };
 
 Level.prototype.obstacleAt = function(pos, size)
+
   var xStart = Math.floor(pos.x);
   var xEnd = Math.ceil(pos.x + size.x);
   var yStart = Math.floor(pos.y);
-  var yEnd = Math.ceil(pos.y + size.y);
+  var yEnd = (Math.ceil(pos.y + size.y);
 
   if (xStart < 0 || xEnd > this.width || yStart < 0 || yEnd > this.height)
       return 'wall';
