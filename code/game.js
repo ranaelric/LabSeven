@@ -216,7 +216,7 @@ Lava.prototype.act = function(step, level) {
 
 var maxStep = 0.05;
 
-var playerXSpeed = 7;
+var playerXSpeed = 5;
 
 Player.prototype.moveX = function(step, level, keys) {
   this.speed.x = 0;
@@ -230,9 +230,9 @@ Player.prototype.moveX = function(step, level, keys) {
     this.pos = newPos;
 };
 
-var gravity = 30;
-var jumpSpeed = 17;
-var playerYSpeed = 7;
+var gravity = 20;
+var jumpSpeed = 25;
+var playerYSpeed = 5;
 
 Player.prototype.moveY = function(step, level, keys) {
   this.speed.y += step * gravity;
@@ -253,11 +253,6 @@ Player.prototype.act = function(step, level, keys) {
   this.moveX(step, level, keys);
   this.moveY(step, level, keys);
 };
-
-Level.prototype.playerTouched = function(type, actor) {
-
-  if (type == "lava" && this.status == null) {
-    this.status = "lost";
 
 // Arrow key codes for readibility
 var arrowCodes = {37: "left", 38: "up", 39: "right", 40: "down"};
