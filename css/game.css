@@ -2,12 +2,12 @@
                  table-layout: fixed;
                  border-spacing: 0;   }
 .background td { padding: 0;          }
-.lava          { background: rgb(247, 118, 138); }
+.lava          { background: rgb(246, 148, 179); }
 .wall          { background: white;   }
 
 .actor  { position: absolute;  }
 .coin   { background: rgb(255, 196, 33); }
-.player { background: rgb(158, 35, 158); }
+.player { background: rgb(227, 137, 227); }
 .floater { background: black; }
 
 .game {
