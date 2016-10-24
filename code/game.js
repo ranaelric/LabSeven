@@ -216,7 +216,7 @@ Lava.prototype.act = function(step, level) {
 
 var maxStep = 0.05;
 
-var playerXSpeed = 5;
+var playerXSpeed = 9;
 
 Player.prototype.moveX = function(step, level, keys) {
   this.speed.x = 0;
@@ -232,7 +232,7 @@ Player.prototype.moveX = function(step, level, keys) {
 
 var gravity = 20;
 var jumpSpeed = 25;
-var playerYSpeed = 5;
+var playerYSpeed = 9;
 
 Player.prototype.moveY = function(step, level, keys) {
   this.speed.y += step * gravity;
