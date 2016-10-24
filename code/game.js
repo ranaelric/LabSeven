@@ -27,6 +27,8 @@ function Level(plan) {
       // Because there is a third case (space ' '), use an "else if" instead of "else"
       else if (ch == "!")
         fieldType = "lava";
+      else if (ch == "y")
+        fieldType = "floater";
 
       // "Push" the fieldType, which is a string, onto the gridLine array (at the end).
       gridLine.push(fieldType);
@@ -58,6 +60,20 @@ function Player(pos) {
   this.speed = new Vector(0, 0);
 }
 Player.prototype.type = "player";
+
+function Lava(pos, ch) {
+  this.pos = pos;
+  this.size = new Vector(1, 1);
+  if (ch == "=") {
+    this.speed = new Vector(2, 0);
+  } else if (ch == "|") {
+    this.speed = new Vector(0, 2);
+  } else if (ch == "v") {
+    this.speed = new Vector(0, 3);
+    this.repeatPos = pos;
+  }
+}
+Lava.prototype.type = "lava";
 
 // Helper function to easily create an element of a type provided 
 // and assign it a class.
@@ -150,22 +166,22 @@ DOMDisplay.prototype.scrollPlayerIntoView = function() {
     this.wrap.scrollTop = center.y + margin - height;
 };
 
-Level.prototype.obstacleAt = function(pos, size)
-
+Level.prototype.obstacleAt = function(pos, size) {
+  
   var xStart = Math.floor(pos.x);
   var xEnd = Math.ceil(pos.x + size.x);
   var yStart = Math.floor(pos.y);
-  var yEnd = (Math.ceil(pos.y + size.y);
+  var yEnd = Math.ceil(pos.y + size.y);
 
-  if (xStart < 0 || xEnd > this.width || yStart < 0 || yEnd > this.height)
-      return 'wall';
-  
+  if (xStart < 0 || xEnd > this.width || yStart < 0)
+    return "wall";
+  if (yEnd > this.height)
+    return "lava";
+
   for (var y = yStart; y < yEnd; y++) {
     for (var x = xStart; x < xEnd; x++) {
       var fieldType = this.grid[y][x];
-      if (fieldType) {
-        return fieldType;
-      }
+      if (fieldType) return fieldType;
     }
   }
 };
@@ -181,6 +197,16 @@ Level.prototype.animate = function(step, keys) {
    // step itself or 100 milliseconds
     step -= thisStep;
   }
+};
+
+Lava.prototype.act = function(step, level) {
+  var newPos = this.pos.plus(this.speed.times(step));
+  if (!level.obstacleAt(newPos, this.size))
+    this.pos = newPos;
+  else if (this.repeatPos)
+    this.pos = this.repeatPos;
+  else
+    this.speed = this.speed.times(-1);
 };
 
 var maxStep = 0.05;
