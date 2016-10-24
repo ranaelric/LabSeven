@@ -231,8 +231,6 @@ Player.prototype.moveX = function(step, level, keys) {
   var obstacle = level.obstacleAt(newPos, this.size);
   if (obstacle != "wall")
     this.pos = newPos;
-  else (obstacle = "lava")
-  }
 
 };
 
