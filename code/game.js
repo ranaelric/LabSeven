@@ -1,3 +1,8 @@
+var actorChars = {
+  "@": Player,
+  "=": Lava, "|": Lava, "v": Lava  
+};
+
 function Level(plan) {
   // Use the length of a single row to set the width of the level
   this.width = plan[0].length;
@@ -69,7 +74,7 @@ function Lava(pos, ch) {
   } else if (ch == "|") {
     this.speed = new Vector(0, 2);
   } else if (ch == "v") {
-    this.speed = new Vector(0, 3);
+    this.speed = new Vector(10, 19);
     this.repeatPos = pos;
   }
 }
