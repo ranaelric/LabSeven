@@ -1,6 +1,6 @@
 var actorChars = {
   "@": Player,
-  "=": Lava, "|": Lava, "v": Lava  
+  "!": Lava, "v": Lava  
 };
 
 function Level(plan) {
