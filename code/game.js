@@ -231,8 +231,9 @@ Player.prototype.moveX = function(step, level, keys) {
   var obstacle = level.obstacleAt(newPos, this.size);
   if (obstacle != "wall")
     this.pos = newPos;
-  if (obstacle = "lava")
-    this.pos = (10, 10);
+  else (obstacle = "lava")
+  }
+
 };
 
 var gravity = 20;
