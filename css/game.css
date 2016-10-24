@@ -2,7 +2,7 @@
                  table-layout: fixed;
                  border-spacing: 0;   }
 .background td { padding: 0;          }
-.lava          { background: rgb(246, 148, 179); }
+.lava          { background: rgb(251, 191, 210); }
 .wall          { background: white;   }
 
 .actor  { position: absolute;  }
