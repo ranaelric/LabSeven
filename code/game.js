@@ -254,6 +254,10 @@ Player.prototype.act = function(step, level, keys) {
   this.moveY(step, level, keys);
 };
 
+Level.prototype.playerTouched = function(type, actor) {
+
+  if (type == "lava" && this.status == null) {
+    this.status = "lost";
 
 // Arrow key codes for readibility
 var arrowCodes = {37: "left", 38: "up", 39: "right", 40: "down"};
