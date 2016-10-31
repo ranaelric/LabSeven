@@ -8,7 +8,7 @@
 .actor  { position: absolute;  }
 .coin   { background: rgb(255, 196, 33); }
 .player { background: rgb(227, 137, 227); }
-.bump { background: url(bump.gif); }
+.bump { background: black; }
 
 .game {
   overflow: hidden;
