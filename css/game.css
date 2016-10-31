@@ -8,18 +8,11 @@
 .actor  { position: absolute;  }
 .coin   { background: rgb(255, 196, 33); }
 .player { background: rgb(227, 137, 227); }
-.floater { background: black; }
+.bump { background: url(bump.gif); }
 
 .game {
   overflow: hidden;
   max-width: 600px;
   max-height: 450px;
   position: relative;
-}
-
-.lost .player {
-  background: rgb(160, 64, 64);
-}
-.won .player {
-  box-shadow: -4px -7px 8px white, 4px -7px 8px white;
 }
