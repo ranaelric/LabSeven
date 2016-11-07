@@ -2,17 +2,23 @@
                  table-layout: fixed;
                  border-spacing: 0;   }
 .background td { padding: 0;          }
-.lava          { background: rgb(251, 191, 210); }
+.lava          { background: rgb(255, 100, 100); }
 .wall          { background: white;   }
 
 .actor  { position: absolute;  }
-.coin   { background: rgb(255, 196, 33); }
-.player { background: rgb(227, 137, 227); }
-.bump { background: black; }
+.coin   { background: url(https://67.media.tumblr.com/8600b7a86adf9a39731ffc9310b28a23/tumblr_ogaei97hcN1sld8uco2_75sq.png); }
+.player { background: url(https://67.media.tumblr.com/ec4b955b646e89b63b8014e058d43ad9/tumblr_ogaezvle5N1sld8uco3_75sq.png); }
 
 .game {
   overflow: hidden;
   max-width: 600px;
   max-height: 450px;
   position: relative;
+}
+
+.lost .player {
+  background: rgb(160, 64, 64);
+}
+.won .player {
+  box-shadow: -4px -7px 8px white, 4px -7px 8px white;
 }
