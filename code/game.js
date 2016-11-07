@@ -306,7 +306,7 @@ Coin.prototype.act = function(step) {
 
 var maxStep = 0.05;
 
-var playerXSpeed = 7;
+var playerXSpeed = 9;
 
 Player.prototype.moveX = function(step, level, keys) {
   this.speed.x = 0;
