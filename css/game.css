@@ -9,7 +9,7 @@
 .coin   { background: url(sparkle.png); }
 .player { background: url(character2.png); }
 .spikes { background: url(spikes.png); }
-.door   { background: url(door.png); }
+.portal { background: url(portal.png); }
 
 .game {
   overflow: hidden;
