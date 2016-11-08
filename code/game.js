@@ -384,7 +384,7 @@ Level.prototype.playerTouched = function(type, actor) {
       this.finishDelay = 1;
     }
    }
-    else if (type == "door") {
+    else if (type == "portal") {
     this.actors = this.actors.filter(function(other) {
        return other != actor;
     });
