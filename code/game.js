@@ -3,7 +3,6 @@ var actorChars = {
   "@": Player,
   "o": Coin, // A coin will wobble up and down
   "!": Lava, "|": Lava, "v": Lava
-  "p": Portal,
   "s": Spikes,
 };
 
