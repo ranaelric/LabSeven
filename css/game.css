@@ -3,7 +3,7 @@
                  border-spacing: 0;   }
 .background td { padding: 0;          }
 .lava          { background: url(lava.png); }
-.wall          { background: url(blocc.png); }
+.wall          { background: url(dirt.png); }
 
 .actor  { position: absolute;  }
 .coin   { background: url(sparkle.png); }
