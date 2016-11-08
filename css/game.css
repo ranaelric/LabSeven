@@ -10,6 +10,7 @@
 .player { background: url(character2.png); }
 .spikes { background: url(spikes.png); }
 .portal { background: url(portal.png); }
+.block  { background: black; }
 
 .game {
   overflow: hidden;
