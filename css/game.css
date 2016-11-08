@@ -1,4 +1,4 @@
-.background    { background: rgb(166, 238, 255);
+.background    { background: url(bgcave.png);
                  table-layout: fixed;
                  border-spacing: 0;   }
 .background td { padding: 0;          }
