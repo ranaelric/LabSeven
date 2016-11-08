@@ -3,7 +3,7 @@ var actorChars = {
   "@": Player,
   "o": Coin, // A coin will wobble up and down
   "!": Lava, "|": Lava, "v": Lava
-  "s": Spikes,
+  "p": Portal,
 };
 
 function Level(plan) {
@@ -39,9 +39,8 @@ function Level(plan) {
       // Because there is a third case (space ' '), use an "else if" instead of "else"
       else if (ch == "!")
         fieldType = "lava";
-      else if (ch == "s");
-        fieldType = "spikes";
-      else if (ch == 
+      else if (ch == "p")
+        fieldType = "portal";
 
       // "Push" the fieldType, which is a string, onto the gridLine array (at the end).
       gridLine.push(fieldType);
@@ -111,13 +110,6 @@ function Lava(pos, ch) {
   }
 }
 Lava.prototype.type = "lava";
-  
-function Spikes(pos, ch) {
-  this.pos = pos;
-  this.size = new Vector(1, 1);
-}
-
-Spikes.prototype.type = "spikes";
 
 // Helper function to easily create an element of a type provided 
 function elt(name, className) {
@@ -378,7 +370,7 @@ Level.prototype.playerTouched = function(type, actor) {
 
   // if the player touches lava and the player hasn't won
   // Player loses
-  if (type == "lava" , "spikes" && this.status == null) {
+  if (type == "lava" && this.status == null) {
     this.status = "lost";
     this.finishDelay = 1;
   } else if (type == "coin") {
@@ -388,6 +380,17 @@ Level.prototype.playerTouched = function(type, actor) {
     // If there aren't any coins left, player wins
     if (!this.actors.some(function(actor) {
            return actor.type == "coin";
+         })) {
+      this.status = "won";
+      this.finishDelay = 1;
+    }
+   }
+    else if (type == "door") {
+    this.actors = this.actors.filter(function(other) {
+       return other != actor;
+    });
+    if (!this.actors.some(function(actor) {
+           return actor.type == "portal";
          })) {
       this.status = "won";
       this.finishDelay = 1;
