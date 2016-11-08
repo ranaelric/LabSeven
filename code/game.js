@@ -40,6 +40,8 @@ function Level(plan) {
         fieldType = "lava";
       else if (ch == "p")
         fieldType = "portal";
+      else if (ch == "z")
+        fieldType = "block";
 
       // "Push" the fieldType, which is a string, onto the gridLine array (at the end).
       gridLine.push(fieldType);
