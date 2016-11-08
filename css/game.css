@@ -8,6 +8,8 @@
 .actor  { position: absolute;  }
 .coin   { background: url(sparkle.png); }
 .player { background: url(character2.png); }
+.spikes { background: url(spikes.png); }
+.door   { background: url(door.png); }
 
 .game {
   overflow: hidden;
